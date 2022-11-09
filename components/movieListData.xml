@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="movieListData" extends="ContentNode">
+
+<interface>
+  <field id="title" type="string" />
+  <field id="description" type="string" />
+</interface>
+
+</component>

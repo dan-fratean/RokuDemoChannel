@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="baseComponent">
+  <interface>
+    <field id="data" type="assocArray" />
+    <field id="backSelected" type="boolean" value="false" alwaysNotify="true" />
+    <field id="exitApp" type="boolean" value="false" />
+    <field id="goTo" type="string" alwaysNotify="true" />
+  </interface>
+  <children>
+    <Rectangle id="background" color="#000000" width="1920" height="1080" translation="[0,0]" />
+    <LayoutGroup id="LayoutGroup">
+      <!-- pretty crude centering, can also be done via code using boundingRect() -->
+      <label id="title" horizAlign="center" vertAlign="center" width="1920" height="20"/>
+      <label id="description" horizAlign="center" vertAlign="center" width="1920" height="40"/>
+    </LayoutGroup>
+  </children>
+  <script type="text/brightscript" uri="pkg:/components/baseComponent.brs" />
+</component>

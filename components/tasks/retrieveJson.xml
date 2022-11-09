@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="retrieveJson" extends="Task" >
+  <interface>
+    <field id="data" type="assocArray" />
+  </interface>
+  <script type="text/brightscript" uri="pkg:/components/tasks/retrieveJson.brs" />
+  <script type="text/brightscript" uri="pkg:/components/libs/httpUtils.brs" />
+</component>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="Constants" extends="Node">
+   <script type="text/brightscript" uri="pkg:/components/constants.brs" />
+</component>

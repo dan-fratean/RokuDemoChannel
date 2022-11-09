@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="movieListItem" extends="Group" >
+  <interface>
+    <field id="itemContent" type="node" onChange="itemContentChanged"/>
+    <field id="focusPercent" type="float" onChange="showfocus" />
+  </interface>
+  <children>
+    <Rectangle id="cursor" width="1850" height="120" color="#000000AA" />
+    <Rectangle id="button" opacity="0.0" width="112" height="46" translation="[0, 73]" color="#FF00FF99" />
+    <label id="title" translation="[0, 0]"/>
+    <label id="description" translation="[0, 40]"/>
+    <label id="watch" text="Watch" translation="[0, 80]"/>
+  </children>
+  <script type="text/brightscript" uri="pkg:/components/movieListItem.brs" />
+</component>
