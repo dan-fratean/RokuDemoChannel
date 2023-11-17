@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  roku:
+    build: .
+    container_name: test_scr
+    volumes:
+      - ./:/roku
+    environment:
+      - ROKU_DEV_TARGET="192.168.3.138"
+    command: ["tail", "-f", "/dev/null"]
