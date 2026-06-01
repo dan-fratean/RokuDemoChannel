@@ -26,7 +26,13 @@ sub _gotData()
     movieNode.description = movie.description
   end for
 
-  m.movieList.content = movieListContent
+  ' OS 15: move the content tree in with no copy; else assign normally
+  if m.global.os15
+    m.movieList.MoveIntoField("content", movieListContent)
+  else
+    m.movieList.content = movieListContent
+  end if
+
   m.movieList.observeField("itemSelected", "_onItemSelected")
 end sub
 

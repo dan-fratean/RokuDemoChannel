@@ -39,7 +39,10 @@ End Function
 
 Function getHttpResponseFromPort(port as Object) as Object
   while (true)
-    msg = Wait(0, port)
+    msg = Wait(30000, port)
+    if (msg = invalid) then return {
+      errorMessage: "Request timed out."
+    }
     if (type(msg) = "roUrlEvent") then
       responseCode = msg.GetResponseCode()
       responseBody = msg.GetString()
