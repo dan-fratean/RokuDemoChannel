@@ -9,14 +9,28 @@ end function
 
 sub _retrieveJson()
   m.task = createObject("roSGNode", "retrieveJson")
-  m.task.observeField("data", "_gotData")
+
+  if m.global.os15
+    m.queue = CreateObject("roRenderThreadQueue")
+    m.queue.AddMessageHandler("JSON_READY", "_onJsonReady")
+  else
+    m.task.observeField("data", "_gotData")
+  end if
+
   m.task.control = "RUN"
 end sub
 
-sub _gotData(data)
-  ' some crude error handling
-  result = data.getRoSGNode().data
+' OS 15: render-thread queue handler (data is moved in, no rendezvous)
+sub _onJsonReady(data, msgInfo)
+  _handleResult(data)
+end sub
 
+' Pre-OS 15 fallback: task data field observer
+sub _gotData(event)
+  _handleResult(event.getRoSGNode().data)
+end sub
+
+sub _handleResult(result)
   ' some crude error handling
   if type(result) = "roAssociativeArray" and result.doesExist("errorMessage")
     print "error occured during json load"
