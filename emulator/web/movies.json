@@ -1,0 +1,50 @@
+{
+    "screens": {
+        "landingScreen": {
+            "title": "Welcome",
+            "description": "We have so many movies for you to watch!",
+            "background": "#10a4e8",
+            "showOnLaunch": true,
+            "buttons": [
+                {
+                    "title": "Watch Movies",
+                    "action": {
+                        "goTo": "moviesScreen"
+                    }
+                },
+                {
+                    "title": "Exit App",
+                    "action": {
+                        "exitApp": true
+                    }
+                }
+            ]
+        },
+        "moviesScreen": {
+            "title": "Movies",
+            "description": "Check out these free open movies!",
+            "background": "#fcba03",
+            "showOnLaunch": null,
+            "movies": [
+                {
+                    "title": "Big Buck Bunny",
+                    "description": "Blender open movie · HLS",
+                    "format": "hls",
+                    "streamURL": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+                },
+                {
+                    "title": "Tears of Steel",
+                    "description": "Blender open movie · HLS",
+                    "format": "hls",
+                    "streamURL": "https://test-streams.mux.dev/tos_ismc/main.m3u8"
+                },
+                {
+                    "title": "Apple BipBop",
+                    "description": "Apple HLS reference stream",
+                    "format": "hls",
+                    "streamURL": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8"
+                }
+            ]
+        }
+    }
+}

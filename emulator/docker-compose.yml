@@ -1,0 +1,8 @@
+services:
+  brs-emu:
+    build: .
+    container_name: brs_emu
+    ports:
+      - "6502:6502"
+    volumes:
+      - ../:/channel:ro
